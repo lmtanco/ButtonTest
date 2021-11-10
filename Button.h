@@ -16,6 +16,9 @@ class Button {
     byte lastReading;
     unsigned long lastDebounceTime = 0;
     unsigned long debounceDelay = 50;
+    static void (*userCallback)();
+    static void privateCallback();
+    static Button* b;
     
   public:
     Button(byte pin);
@@ -25,6 +28,8 @@ class Button {
 
     byte getState();
     bool isPressed();
+
+    void setInterrupt(void(*isr)());
 };
 
 #endif
