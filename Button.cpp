@@ -16,7 +16,7 @@ void Button::privateCallback() {
       // TODO: Enable WDT interrupt
     
   }
-
+}
 // TODO: WDT ISR and change FALLING to RISING, etc. 
 
 Button::Button(byte pin) {
