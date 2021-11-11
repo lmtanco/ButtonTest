@@ -17,7 +17,6 @@ class Button {
     unsigned long lastDebounceTime = 0;
     unsigned long debounceDelay = 50;
     static void (*userCallback)();
-    static void privateCallback();
     static Button* b;
     
   public:
@@ -30,6 +29,7 @@ class Button {
     bool isPressed();
 
     void setInterrupt(void(*isr)());
+    static void debounceAndCallback();
 };
 
 #endif
